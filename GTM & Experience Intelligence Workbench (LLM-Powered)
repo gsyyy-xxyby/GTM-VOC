@@ -1,0 +1,61 @@
+# 🚀 GTM & Experience Intelligence Workbench (LLM-Powered)
+> 基于大语言模型与全链路漏斗分析的 GTM & 商家体验智能诊断平台
+
+![Streamlit](https://img.shields.io/badge/Framework-Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek%20API-blue)
+![Plotly](https://img.shields.io/badge/Visualization-Plotly-3F4F75?logo=plotly&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)
+
+---
+
+## 📌 项目背景与痛点
+在跨境电商与商业化广告投放业务中，策略复盘常面临两大痛点：
+1. **定量与定性割裂**：转化漏斗数据（流失率、LTV、CVR）与商家/用户定性原声（VOC）分散在不同系统，难以实现精准交叉归因。
+2. **策略产出周期长**：从发现漏斗异动到输出跨部门（产研、投放文案、销售话术）的协同方案，传统人工分析通常需要 2~3 天。
+
+本项目通过集成 **Streamlit**、**Plotly** 与 **DeepSeek LLM**，搭建了一站式智能复盘与策略生成工作台，将全链路归因与 GTM 交付方案生成缩短至**分钟级**。
+
+---
+
+## ✨ 核心功能
+
+* **📊 定量指标与转化漏斗**：
+  * 支持设置流量规模、停留时长与客单价，动态加权测算预估 CVR 与 LTV 基准。
+  * 基于 Plotly 绘制动态转化漏斗，直观锁定各环节流失节点（注册 $\to$ 新手引导 $\to$ 核心体验 $\to$ 付费转化）。
+* **🔍 结构化 VOC 智能提炼**：
+  * 支持 CSV 批量上传或文本直接录入用户/商家原声反馈。
+  * 利用 DeepSeek 结构化抽取 **核心痛点 (Pain Points)**、**流失阻力 (Friction Points)** 与 **惊艳时刻 (Aha Moments)**。
+* **📑 全链路 GTM 策略自动化生成**：
+  * 定量漏斗与定性原声交叉归因，一键生成结构化复盘方案：
+    1. 流失根因归因与典型案例萃取
+    2. 产研迭代优先级 (Product Roadmap P0/P1)
+    3. 市场投放与文案调整 (Messaging/Copywriting)
+    4. 销售/社群高转化触达话术 (Sales Playbook)
+  * 支持一键导出标准 Markdown 格式策略报告。
+
+---
+
+## 🛠️ 技术栈
+
+* **前端/应用框架**：Streamlit
+* **大模型驱动**：DeepSeek API (`deepseek-chat`, `deepseek-reasoner`) via OpenAI SDK
+* **数据处理与图表**：Pandas, Plotly
+* **数据结构约束**：JSON Object Mode
+
+---
+
+## 🚀 本地快速启动
+
+```bash
+# 1. 克隆本仓库
+git clone [https://github.com/你的用户名/你的仓库名.git](https://github.com/你的用户名/你的仓库名.git)
+cd 你的仓库名
+
+# 2. 安装依赖
+pip install -r requirements.txt
+
+# 3. 设置环境变量（或在启动后页面侧边栏手动输入）
+export DEEPSEEK_API_KEY="your-deepseek-api-key"
+
+# 4. 运行 Streamlit 应用
+streamlit run app.py
